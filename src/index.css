@@ -5,6 +5,7 @@
 	font-family: 'Poppins', sans-serif;
 	line-height: 1.5;
 	font-weight: 400;
+	font-size: 18px;
 
 	font-synthesis: none;
 	text-rendering: optimizeLegibility;
@@ -21,9 +22,7 @@
 
 	/* neutral */
 	--gray: hsl(0, 0%, 75%);
-	--grayish-violet: hsl(257, 7%, 63%);
+	--grayish-violet: #9e9aa7;
 	--very-dark-blue: hsl(255, 11%, 22%);
 	--very-dark-violet: hsl(260, 8%, 14%);
-
-	--font-size: 18px;
 }

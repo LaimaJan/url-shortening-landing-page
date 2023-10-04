@@ -1,6 +1,12 @@
 #root {
-	max-width: 1280px;
-	margin: 0 auto;
-	padding: 2rem;
-	text-align: center;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+}
+
+.App {
+	max-width: 1440px;
+	width: 100%;
+	min-height: 100vh;
+	margin: 0 50px;
 }
