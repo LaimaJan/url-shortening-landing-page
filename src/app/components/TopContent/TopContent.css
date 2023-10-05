@@ -1,0 +1,41 @@
+.TopContent {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	margin-top: 30px;
+}
+
+.heading {
+	font-size: 60px;
+	line-height: 1.2;
+	font-weight: 700;
+}
+
+.text {
+	font-size: 20px;
+	line-height: 1.6;
+	color: var(--grayish-violet);
+}
+
+.left-side {
+	margin-right: 40px;
+}
+
+.left-side button {
+	background-color: var(--cyan);
+	border: none;
+	padding: 10px 23px;
+	border-radius: 20px;
+	color: white;
+	font-size: 18px;
+	font-weight: 600;
+	margin-top: 20px;
+}
+
+.left-side button:hover {
+	background-color: hsl(180, 47%, 74%);
+}
+
+.right-side {
+	margin-right: -200px;
+}

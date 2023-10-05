@@ -1,2 +1,4 @@
 .PageContent {
+	display: flex;
+	flex-direction: column;
 }

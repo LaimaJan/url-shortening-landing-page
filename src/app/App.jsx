@@ -1,13 +1,22 @@
 // import { useState } from 'react'
 import './App.css';
 import NavBar from './components/NavBar/NavBar';
-import PageContent from './components/PageContent/PageContent';
+
+import TopContent from './components/TopContent/TopContent';
+import MiddleContent from './components/MiddleContent/MiddleContent';
+import BottomContent from './components/BottomContent/BottomContent';
 
 function App() {
 	return (
 		<div className="App">
-			<NavBar />
-			<PageContent />
+			<div className="nav-bar-top-content-container">
+				<NavBar />
+				<TopContent />
+			</div>
+			<MiddleContent />
+			<BottomContent />
+			<div className="start-today-banner"></div>
+			<footer></footer>
 		</div>
 	);
 }

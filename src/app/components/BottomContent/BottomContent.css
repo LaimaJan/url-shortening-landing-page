@@ -1,0 +1,31 @@
+.BottomContent {
+	max-width: 1440px;
+	width: 100%;
+	background-color: #eff1f7;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.info-container {
+	max-width: 520px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 80px;
+	margin-top: 200px;
+	gap: 20px;
+	text-align: center;
+}
+
+.info-heading {
+	font-size: 30px;
+	font-weight: 600;
+}
+
+.info-text {
+	line-height: 1.6;
+	font-weight: 500;
+	color: var(--grayish-violet);
+}
