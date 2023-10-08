@@ -22,7 +22,7 @@
 
 	/* neutral */
 	--gray: hsl(0, 0%, 75%);
-	--grayish-violet: #9e9aa7;
+	--grayish-violet: rgb(158, 154, 167);
 	--very-dark-blue: hsl(255, 11%, 22%);
 	--very-dark-violet: hsl(260, 8%, 14%);
 }

@@ -5,6 +5,8 @@ import NavBar from './components/NavBar/NavBar';
 import TopContent from './components/TopContent/TopContent';
 import MiddleContent from './components/MiddleContent/MiddleContent';
 import BottomContent from './components/BottomContent/BottomContent';
+import BottomBanner from './components/BottomBanner/BottomBanner';
+import Footer from './components/Footer/Footer';
 
 function App() {
 	return (
@@ -15,8 +17,8 @@ function App() {
 			</div>
 			<MiddleContent />
 			<BottomContent />
-			<div className="start-today-banner"></div>
-			<footer></footer>
+			<BottomBanner />
+			<Footer />
 		</div>
 	);
 }

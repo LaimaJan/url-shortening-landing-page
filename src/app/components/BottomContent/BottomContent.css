@@ -20,8 +20,9 @@
 }
 
 .company-info-heading {
-	font-size: 30px;
-	font-weight: 600;
+	font-size: 32px;
+	font-weight: 700;
+	color: var(--very-dark-violet);
 }
 
 .company-info-text {
