@@ -24,8 +24,8 @@
 .left-side button {
 	background-color: var(--cyan);
 	border: none;
-	padding: 10px 23px;
-	border-radius: 20px;
+	padding: 15px 28px;
+	border-radius: 25px;
 	color: white;
 	font-size: 18px;
 	font-weight: 600;
@@ -38,4 +38,30 @@
 
 .right-side {
 	margin-right: -200px;
+}
+
+@media screen and (max-width: 780px) {
+	.TopContent {
+		flex-direction: column-reverse;
+	}
+
+	.right-side {
+		margin-right: 0;
+	}
+
+	.left-side {
+		margin-top: 45px;
+		margin-right: 0;
+
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		text-align: center;
+		align-items: center;
+		gap: 10px;
+	}
+
+	.heading {
+		font-size: 50px;
+	}
 }

@@ -1,4 +1,5 @@
 import './TopContent.css';
+// import IllustrationWorking from '../../images/illustration-working.svg';
 
 export default function TopContent() {
 	return (
@@ -13,7 +14,12 @@ export default function TopContent() {
 					<button>Get Started</button>
 				</div>
 				<div className="right-side">
-					<svg xmlns="http://www.w3.org/2000/svg" width="733" height="482">
+					<svg
+						className="desktop-svg"
+						xmlns="http://www.w3.org/2000/svg"
+						width="733"
+						height="482"
+					>
 						<defs>
 							<linearGradient id="a" x1="0%" x2="100%" y1="50%" y2="50%">
 								<stop offset="0%" stopColor="#183866" />
