@@ -41,7 +41,6 @@
 }
 
 .error-message {
-	display: none;
 	position: absolute;
 	transform: translateY(25px);
 	font-size: 16px;
@@ -53,13 +52,13 @@
 	font-weight: 600;
 }
 
-/* .activated-error-message input {
+.activated-error-message input {
 	border: 2px solid var(--red);
 }
 
 .activated-error-message input::placeholder {
 	color: var(--red);
-} */
+}
 
 .shorten-link-button {
 	border: none;

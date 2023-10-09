@@ -5,6 +5,7 @@ export default function CreatedLinks() {
 		<div className="created-shortened-links-container">
 			<div className="link">
 				<p className="link-before">https://www.frontendmentor.io</p>
+				<div className="hr-line" />
 				<div className="link-after-container">
 					<p className="link-after">https://rel.ink/k4IKyk</p>
 					<button>Copy</button>

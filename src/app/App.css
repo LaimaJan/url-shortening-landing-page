@@ -12,17 +12,3 @@
 	flex-direction: column;
 	align-items: center;
 }
-
-.nav-bar-top-content-container {
-	max-width: 1100px;
-	width: 100%;
-}
-
-@media screen and (max-width: 375px) {
-}
-
-@media screen and (max-width: 780px) {
-	.nav-bar-top-content-container {
-		max-width: 375px;
-	}
-}
