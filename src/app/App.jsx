@@ -1,4 +1,6 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import axios from 'axios';
+
 import './App.css';
 import NavBar from './components/NavBar/NavBar';
 import TopContent from './components/TopContent/TopContent';
@@ -9,12 +11,41 @@ import Footer from './components/Footer/Footer';
 
 function App() {
 	const [linkInputValue, setLinkInputValue] = useState('');
+	const [arrayShortenedLinks, setArrayShortenedLinks] = useState([]);
+	console.log(arrayShortenedLinks);
 
 	const handleLinkInputChange = (value) => {
 		setLinkInputValue(value);
-		console.log('parsinese value kazkoki');
+		console.log('has taken back a value from input');
 		console.log(linkInputValue);
 	};
+
+	useEffect(() => {
+		const fetchData = async () => {
+			try {
+				if (linkInputValue.trim() === '') {
+					console.log('Input URL is empty.');
+				} else {
+					const response = await axios(
+						`https://api.shrtco.de/v2/shorten?url=${encodeURIComponent(
+							linkInputValue
+						)}`
+					);
+
+					const newLink = {
+						originalLink: linkInputValue,
+						shortenedLink: response.data.result.full_short_link,
+					};
+					setArrayShortenedLinks([...arrayShortenedLinks, newLink]);
+					setLinkInputValue('');
+				}
+			} catch (e) {
+				console.log(e);
+			}
+		};
+
+		fetchData();
+	}, [linkInputValue, arrayShortenedLinks]);
 
 	return (
 		<div className="App">
@@ -24,7 +55,7 @@ function App() {
 				linkInputValue={linkInputValue}
 				onLinkInputChange={handleLinkInputChange}
 			/>
-			<BottomContent />
+			<BottomContent shortLinkArray={arrayShortenedLinks} />
 			<BottomBanner />
 			<Footer />
 		</div>

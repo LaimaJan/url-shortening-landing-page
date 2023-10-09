@@ -1,10 +1,13 @@
 import './BottomContent.css';
-import CreatedLinks from '../CreatedLinks/CreatedLinks';
+import ShortenedLinks from '../ShortenedLinks/ShortenedLinks';
 
-export default function BottomContent() {
+import PropTypes from 'prop-types';
+
+export default function BottomContent({ shortLinkArray }) {
+	console.log('laba dienaaaa', shortLinkArray);
 	return (
 		<section className="BottomContent">
-			<CreatedLinks />
+			<ShortenedLinks linksArray={shortLinkArray} />
 			<div className="bottom-content-container">
 				<div className="bottom-container-company-info">
 					<p className="company-info-heading">Advanced Statistics</p>
@@ -73,3 +76,7 @@ export default function BottomContent() {
 		</section>
 	);
 }
+
+BottomContent.propTypes = {
+	shortLinkArray: PropTypes.array.isRequired,
+};

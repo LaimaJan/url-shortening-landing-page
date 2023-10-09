@@ -7,13 +7,13 @@ export default function MiddleContent({ linkInputValue, onLinkInputChange }) {
 	const [isEmptyInput, setIsEmptyInput] = useState(false);
 
 	const handleButtonClick = () => {
-		console.log('kazkas vyksta');
 		if (linkInputValue.trim() === '') {
 			setIsEmptyInput(true);
-			console.log('veikia, nera  value');
+			console.log('NERA inpute Linko');
 		} else {
 			setIsEmptyInput(false);
-			console.log('veikia, YRA  value');
+			console.log('YRA inpute Linkas');
+			onLinkInputChange(linkInputValue);
 		}
 	};
 
