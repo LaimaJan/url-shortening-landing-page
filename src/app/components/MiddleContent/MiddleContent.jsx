@@ -9,10 +9,9 @@ export default function MiddleContent({ linkInputValue, onLinkInputChange }) {
 	const handleButtonClick = () => {
 		if (linkInputValue.trim() === '') {
 			setIsEmptyInput(true);
-			console.log('NERA inpute Linko');
 		} else {
 			setIsEmptyInput(false);
-			console.log('YRA inpute Linkas');
+
 			onLinkInputChange(linkInputValue);
 		}
 	};

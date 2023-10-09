@@ -4,7 +4,6 @@ import ShortenedLinks from '../ShortenedLinks/ShortenedLinks';
 import PropTypes from 'prop-types';
 
 export default function BottomContent({ shortLinkArray }) {
-	console.log('laba dienaaaa', shortLinkArray);
 	return (
 		<section className="BottomContent">
 			<ShortenedLinks linksArray={shortLinkArray} />

@@ -20,8 +20,6 @@ export default function ShortenedLinks({ linksArray }) {
 									navigator.clipboard
 										.writeText(link.shortenedLink)
 										.then(() => {
-											console.log('Link copied to clipboard.');
-
 											const newCopiedLinks = [...copiedLinks];
 											newCopiedLinks[index] = true;
 											setCopiedLinks(newCopiedLinks);

@@ -16,8 +16,6 @@ function App() {
 
 	const handleLinkInputChange = (value) => {
 		setLinkInputValue(value);
-		console.log('has taken back a value from input');
-		console.log(linkInputValue);
 	};
 
 	useEffect(() => {
