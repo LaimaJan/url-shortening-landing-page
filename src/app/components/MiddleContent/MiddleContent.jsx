@@ -3,8 +3,9 @@ import { useState } from 'react';
 
 import PropTypes from 'prop-types';
 
-export default function MiddleContent({ linkInputValue, onLinkInputChange }) {
+export default function MiddleContent({ onLinkInputChange }) {
 	const [isEmptyInput, setIsEmptyInput] = useState(false);
+	const [linkInputValue, setLinkInputValue] = useState('');
 
 	const handleButtonClick = () => {
 		if (linkInputValue.trim() === '') {
@@ -14,11 +15,8 @@ export default function MiddleContent({ linkInputValue, onLinkInputChange }) {
 
 			onLinkInputChange(linkInputValue);
 		}
-	};
 
-	const handleInputChange = (e) => {
-		const { value } = e.target;
-		onLinkInputChange(value);
+		setLinkInputValue('');
 	};
 
 	return (
@@ -33,7 +31,7 @@ export default function MiddleContent({ linkInputValue, onLinkInputChange }) {
 						type="text"
 						placeholder="Shorten a link here..."
 						value={linkInputValue}
-						onChange={handleInputChange}
+						onChange={(e) => setLinkInputValue(e.target.value)}
 					/>
 					{isEmptyInput && <p className="error-message">Please add a link</p>}
 				</div>

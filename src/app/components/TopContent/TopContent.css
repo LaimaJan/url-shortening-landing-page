@@ -50,6 +50,14 @@
 
 	.right-side {
 		margin-right: 0;
+		max-width: 375px;
+	}
+
+	.desktop-svg {
+		margin-left: -70px;
+		margin-top: -60px;
+		margin-bottom: -20px;
+		transform: scale(0.8);
 	}
 
 	.left-side {

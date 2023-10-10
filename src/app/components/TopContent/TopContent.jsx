@@ -1,5 +1,4 @@
 import './TopContent.css';
-// import IllustrationWorking from '../../images/illustration-working.svg';
 
 export default function TopContent() {
 	return (
