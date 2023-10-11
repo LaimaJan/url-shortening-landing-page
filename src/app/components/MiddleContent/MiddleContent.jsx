@@ -6,17 +6,40 @@ import PropTypes from 'prop-types';
 export default function MiddleContent({ onLinkInputChange }) {
 	const [isEmptyInput, setIsEmptyInput] = useState(false);
 	const [linkInputValue, setLinkInputValue] = useState('');
+	const [urlValidate, setUrlValidate] = useState(false);
 
 	const handleButtonClick = () => {
+		validateURL(linkInputValue);
+
 		if (linkInputValue.trim() === '') {
 			setIsEmptyInput(true);
+			console.log('linkInputvalue nera');
+		} else if (urlValidate) {
+			console.log('negeras url');
+			setIsEmptyInput(true);
 		} else {
+			console.log('url keliauja atgal i app');
 			setIsEmptyInput(false);
 
 			onLinkInputChange(linkInputValue);
 		}
 
 		setLinkInputValue('');
+	};
+
+	const validateURL = (url) => {
+		console.log('veikia');
+		if (
+			/^(http(s)?:\/\/)[-a-zA-Z0-9@:%._+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_+.~#?&//=]*)$/.test(
+				url
+			)
+		) {
+			console.log('Valid');
+			setUrlValidate(false);
+		} else {
+			console.log('Not Valid');
+			setUrlValidate(true);
+		}
 	};
 
 	return (
@@ -33,7 +56,11 @@ export default function MiddleContent({ onLinkInputChange }) {
 						value={linkInputValue}
 						onChange={(e) => setLinkInputValue(e.target.value)}
 					/>
-					{isEmptyInput && <p className="error-message">Please add a link</p>}
+					{isEmptyInput && (
+						<p className="error-message">
+							${urlValidate ? 'Invalid URL inserted' : 'Please add a link'}
+						</p>
+					)}
 				</div>
 				<div className="button-container">
 					<button className="shorten-link-button" onClick={handleButtonClick}>
