@@ -7,13 +7,13 @@ export default function MiddleContent({ onLinkInputChange }) {
 	const [isEmptyInput, setIsEmptyInput] = useState(false);
 	const [linkInputValue, setLinkInputValue] = useState('');
 	const [urlValidate, setUrlValidate] = useState(false);
+	console.log(urlValidate);
 
 	const handleButtonClick = () => {
 		validateURL(linkInputValue);
 
 		if (linkInputValue.trim() === '') {
 			setIsEmptyInput(true);
-			console.log('linkInputvalue nera');
 		} else if (urlValidate) {
 			console.log('negeras url');
 			setIsEmptyInput(true);
@@ -29,16 +29,21 @@ export default function MiddleContent({ onLinkInputChange }) {
 
 	const validateURL = (url) => {
 		console.log('veikia');
-		if (
-			/^(http(s)?:\/\/)[-a-zA-Z0-9@:%._+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_+.~#?&//=]*)$/.test(
-				url
-			)
-		) {
-			console.log('Valid');
-			setUrlValidate(false);
+
+		if (url.trim() !== '') {
+			if (
+				/^(http(s)?:\/\/)[-a-zA-Z0-9@:%._+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_+.~#?&//=]*)$/.test(
+					url
+				)
+			) {
+				console.log('Valid');
+				setUrlValidate(false);
+			} else {
+				console.log('Not Valid');
+				setUrlValidate(true);
+			}
 		} else {
-			console.log('Not Valid');
-			setUrlValidate(true);
+			setIsEmptyInput(true);
 		}
 	};
 
@@ -58,7 +63,7 @@ export default function MiddleContent({ onLinkInputChange }) {
 					/>
 					{isEmptyInput && (
 						<p className="error-message">
-							${urlValidate ? 'Invalid URL inserted' : 'Please add a link'}
+							{urlValidate ? 'Invalid URL inserted' : 'Please add a link'}
 						</p>
 					)}
 				</div>
