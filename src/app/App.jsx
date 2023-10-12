@@ -18,72 +18,45 @@ function App() {
 		setLinkInputValue(value);
 	};
 
-	// useEffect(() => {
-	// 	const fetchData = async () => {
-	// 		try {
-	// 			if (linkInputValue.trim() === '') {
-	// 				console.log('Input URL is empty.');
-	// 			} else {
-	// 				const response = await axios(
-	// 					`https://api.shrtco.de/v2/shorten?url=${encodeURIComponent(
-	// 						linkInputValue
-	// 					)}`
-	// 				);
-
-	// 				const newLink = {
-	// 					originalLink: linkInputValue,
-	// 					shortenedLink: response.data.result.full_short_link,
-	// 				};
-	// 				setArrayShortenedLinks([...arrayShortenedLinks, newLink]);
-	// 				setLinkInputValue('');
-	// 			}
-	// 		} catch (e) {
-	// 			console.log(e);
-	// 		}
-	// 	};
-
-	// 	fetchData();
-	// }, [linkInputValue, arrayShortenedLinks]);
-
 	const API_TOKEN =
 		'QGeWt9MUSz3FrXs8fANQKbhBfPsdgWZvPba0ntYJvHAy6o9BD9KXuxylSOdm';
 
-	const fetchData = async () => {
-		try {
-			if (linkInputValue.trim() === '') {
-				console.log('Input URL is empty.');
-			} else {
-				const response = await axios.post(
-					'https://api.tinyurl.com/create',
-					{
-						url: linkInputValue,
-						domain: 'tinyurl.com',
-						description: 'string',
-					},
-					{
-						headers: {
-							accept: 'application/json',
-							'content-type': 'application/json',
-							Authorization: `Bearer ${API_TOKEN}`,
-						},
-					}
-				);
-
-				console.log('response: ', response);
-
-				const newLink = {
-					originalLink: linkInputValue,
-					shortenedLink: response.data.data.tiny_url,
-				};
-				setArrayShortenedLinks([...arrayShortenedLinks, newLink]);
-				setLinkInputValue('');
-			}
-		} catch (e) {
-			console.log(e);
-		}
-	};
-
 	useEffect(() => {
+		const fetchData = async () => {
+			try {
+				if (linkInputValue.trim() === '') {
+					console.log('Input URL is empty.');
+				} else {
+					const response = await axios.post(
+						'https://api.tinyurl.com/create',
+						{
+							url: linkInputValue,
+							domain: 'tinyurl.com',
+							description: 'string',
+						},
+						{
+							headers: {
+								accept: 'application/json',
+								'content-type': 'application/json',
+								Authorization: `Bearer ${API_TOKEN}`,
+							},
+						}
+					);
+
+					console.log('response: ', response);
+
+					const newLink = {
+						originalLink: linkInputValue,
+						shortenedLink: response.data.data.tiny_url,
+					};
+					setArrayShortenedLinks([...arrayShortenedLinks, newLink]);
+					setLinkInputValue('');
+				}
+			} catch (e) {
+				console.log(e);
+			}
+		};
+
 		fetchData();
 	}, [linkInputValue, arrayShortenedLinks]);
 

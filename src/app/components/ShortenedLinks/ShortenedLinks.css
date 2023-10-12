@@ -25,6 +25,9 @@
 .link-before {
 	margin-left: 30px;
 	line-height: 1.5;
+	max-width: 45%;
+	word-wrap: break-word;
+	position: relative;
 }
 
 .hr-line {
@@ -41,6 +44,9 @@
 .link-after {
 	color: var(--cyan);
 	line-height: 1.5;
+	max-width: 85%;
+	word-wrap: break-word;
+	position: relative;
 }
 
 .copy-button {
@@ -85,6 +91,7 @@
 
 	.link-before {
 		margin-top: 5px;
+		max-width: 85%;
 	}
 
 	.link-after-container {
@@ -104,6 +111,8 @@
 
 	.link-after {
 		margin-left: 30px;
+
+		max-width: 85%;
 	}
 
 	.copy-button,
